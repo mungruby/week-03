@@ -16,7 +16,11 @@ describe "Current Administration" do
     # Then you can assign any properties on the OpenStruct
     administration.president = "Barack Obama"
     
-    administration.vice_president = "Broseph Jiden"
+    administration.first_lady = "Michelle Obama"
+    
+    administration.vice_president = "Joe Biden"
+    
+    administration.cabinet = OpenStruct.new(:state_department => "Hillary Clinton")
     
     # This last line has `administration` so that it is returned as the subject
     administration
@@ -24,7 +28,6 @@ describe "Current Administration" do
   
   it "should have a president" do
     subject.should respond_to :president
-    
   end
 
   it "should report the correct President" do
@@ -36,28 +39,23 @@ describe "Current Administration" do
   # @see https://www.relishapp.com/rspec/rspec-core/docs/subject/implicit-receiver
   #
   # This is the same as the test above. This is essentially a shortcut for
-  # typeing the following: "subject.president.should == 'Barack Obama'"
+  # typing the following: "subject.president.should == 'Barack Obama'"
   #
   its(:president) { should == "Barack Obama" }
-
-
   
   its(:first_lady) { should == "Michelle Obama" }
   
   its(:vice_president) { should == "Joe Biden" }
 
+
   describe "cabinet" do
     
     it "should be present" do
-    
       subject.should respond_to(:cabinet)
-    
     end
     
     it "should have a statement department" do
-      
       subject.cabinet.state_department.should == "Hillary Clinton"
-      
     end
     
   end
