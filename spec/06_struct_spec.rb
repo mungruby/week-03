@@ -6,8 +6,8 @@
 # 
 # @see http://en.wikipedia.org/wiki/Batman
 
-Villian = Struct.new :name, :nemesis  # Villian = Struct.new :name
-Superhero = Struct.new :name, :origin, :nemesis
+Villian = Struct.new :name, :nemesis
+Superhero = Struct.new :name, :origin, :nemesis, :alter_ego, :nick_name
 AlterEgo = Struct.new :name, :superhero
 
 describe Villian do
@@ -15,7 +15,7 @@ describe Villian do
   #
   # This is an example of RSpec's let helper method.
   # 
-  # Here we are saying: For these examples like any references to `joker` return
+  # Here we are saying: For these examples let any references to `batman` return
   # the value returned between the two mustaches (the block).
   # 
   # @see https://www.relishapp.com/rspec/rspec-core/docs/helper-methods/let-and-let
@@ -62,7 +62,7 @@ describe Superhero do
   #
   # This is an example of RSpec's let helper method.
   # 
-  # Here we are saying: For these examples like any references to `joker` return
+  # Here we are saying: For these examples let any references to `joker` return
   # the value returned between the two mustaches (the block).
   # 
   # @see https://www.relishapp.com/rspec/rspec-core/docs/helper-methods/let-and-let
@@ -77,61 +77,40 @@ describe Superhero do
   #
   # @see https://www.relishapp.com/rspec/rspec-core/docs/subject/explicit-subject
   #
-  subject { Superhero.new "Batman", "Gotham City", joker }
+  subject { Superhero.new "Batman", "Gotham City", joker, bruce_wayne, "The Caped Crusader" }
   
   it "should have a name" do
     subject.should respond_to :name
   end
-  
   it "should have the correct name" do
-    
     subject.name.should == "Batman"
-    
+  end
+  it "should have the correct origin" do
+    subject.origin.should == "Gotham City"
   end
   
-  it "should have the correct origin" do
-    
-    subject.origin.should == "Gotham City"
-    
-  end
   
   describe "nemesis" do
-    
     it "should have the correct name" do
-      
       subject.nemesis.name.should == "Joker"
-      
     end
-    
   end
   
   
   describe "alter_ego" do
-
     it "should respond_to? alter_ego" do
-
       subject.should respond_to :alter_ego
-
     end
-
     it "should have an alter ego" do
-
       subject.alter_ego.should_not be_nil
-
     end
-    
     it "should have the correct alter ego" do
-      
       subject.alter_ego.should == bruce_wayne
-      
     end
-    
   end
+  
   
   it "should have a nickname" do
-    
     subject.nick_name.should == "The Caped Crusader"
-    
   end
-  
 end
