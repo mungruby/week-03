@@ -39,12 +39,8 @@ describe "Boolean", "refresher" do
     it "should reverse the value from true to false" do
       
       superman_index = subject.index(:superman)
-<<<<<<< HEAD
       superman_index.should be_true
-=======
- 
->>>>>>> Added pre-change validations and corrected spelling errors.
-      
+
       superman_index = !superman_index
       
       superman_index.should be_false
@@ -54,11 +50,8 @@ describe "Boolean", "refresher" do
     it "should reverse the value from false to true" do
       
       captain_marvel = subject.include?(:captain_marvel)
-<<<<<<< HEAD
-=======
+      captain_marvel.should be_false
 
->>>>>>> Added pre-change validations and corrected spelling errors.
-      
       captain_marvel = !captain_marvel
 
       captain_marvel.should be_true
