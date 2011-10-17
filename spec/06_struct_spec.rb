@@ -113,4 +113,5 @@ describe Superhero do
   it "should have a nickname" do
     subject.nick_name.should == "The Caped Crusader"
   end
+
 end
