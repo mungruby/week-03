@@ -1,6 +1,6 @@
 
 #
-# Often times you want to expression a conditional in the negative. In those
+# Often times you want to express a conditional in the negative. In those
 # cases you can place a ! (bang) in the front of the resulting operation.
 # 
 # Ruby also provides the `unless` operator that you can use to express this 
@@ -23,7 +23,6 @@ describe "unless" do
     we_have_heroes = true if !subject.empty?
     
     we_have_heroes.should be_true
-  
   
   end
   
