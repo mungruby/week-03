@@ -37,7 +37,7 @@ describe "else" do
   end
   
   
-  describe "tertiary operation" do
+  describe "ternary operator" do
     
     # The tertiary operator is a shorthand way of expressing an if-else. It is 
     # not necessary to use this operation in your programming style but you 
@@ -45,7 +45,8 @@ describe "else" do
     # else uses it.
     it "should be expressed as: STATEMENT ? WHEN_TRUE_DO_THIS : WHEN_FALSE_DO_THIS" do
       
-      subject.length > 3 ? too_many_superheroes = true : too_many_superheroes = false
+      # subject.length > 3 ? too_many_superheroes = true : too_many_superheroes = false
+      too_many_superheroes = subject.length > 3 ? true : false
       too_many_superheroes.should be_false
       
     end
