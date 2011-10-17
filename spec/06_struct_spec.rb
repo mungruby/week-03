@@ -6,7 +6,7 @@
 # 
 # @see http://en.wikipedia.org/wiki/Batman
 
-Villian = Struct.new :name
+Villian = Struct.new :name, :nemesis  # Villian = Struct.new :name
 Superhero = Struct.new :name, :origin, :nemesis
 AlterEgo = Struct.new :name, :superhero
 
@@ -29,7 +29,7 @@ describe Villian do
   #
   # @see https://www.relishapp.com/rspec/rspec-core/docs/subject/explicit-subject
   #
-  subject { Villian.new "Joker" }
+  subject { Villian.new "Joker", batman }
   
   
   it "should have the correct name" do
