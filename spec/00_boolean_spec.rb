@@ -8,7 +8,7 @@ describe "Boolean", "refresher" do
   # @see https://www.relishapp.com/rspec/rspec-core/docs/subject/explicit-subject
   subject { [ :superman, :wonder_woman, :green_lantern ] }
 
-  it "should be true when the statements evaluates to 0" do
+  it "should be true when the statement evaluates to 0" do
     
     # This is just a reminder as a lot of other programming languages include
     # the value 0 as false. In ruby 0 is a true value.
@@ -34,12 +34,14 @@ describe "Boolean", "refresher" do
     
   end
   
-  context "when proceeded with a ! (bang)" do
+  context "when preceded with a ! (bang)" do
     
     it "should reverse the value from true to false" do
       
       superman_index = subject.index(:superman)
 
+      superman_index.should be_true 
+      
       superman_index = !superman_index
       
       superman_index.should be_false
@@ -50,6 +52,8 @@ describe "Boolean", "refresher" do
       
       captain_marvel = subject.include?(:captain_marvel)
 
+      captain_marvel.should be_false
+      
       captain_marvel = !captain_marvel
 
       captain_marvel.should be_true
@@ -59,7 +63,7 @@ describe "Boolean", "refresher" do
     
   end
   
-  context "when proceeded with !! (bang-bang)" do
+  context "when preceded with !! (bang-bang)" do
     
     it "should convert any 'truthy' value to a true" do
       
