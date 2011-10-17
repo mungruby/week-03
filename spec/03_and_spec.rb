@@ -42,7 +42,7 @@ describe "and" do
       fail "The array is length of 4, when I remember only picking 3 superheroes"
       
       # the above test will not get to this point because the array only has
-      # a length of three. But more than than the operation of setting the 
+      # a length of three. But more than that, the operation of setting the 
       # current super hero will not happen.
       
     end
