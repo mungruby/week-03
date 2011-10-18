@@ -1,4 +1,4 @@
-require 'rubygems'
+# require 'rubygems'
 require 'sinatra'
 
 # Sinatra has some good documentation

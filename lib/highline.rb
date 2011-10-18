@@ -1,4 +1,4 @@
-require 'rubygems'
+# require 'rubygems'
 require 'highline/import'
 
 # Refer to the documentation here for some more examples:
