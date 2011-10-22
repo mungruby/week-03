@@ -54,7 +54,7 @@ describe "Current Administration" do
       subject.should respond_to(:cabinet)
     end
     
-    it "should have a statement department" do
+    it "should have a state department" do
       subject.cabinet.state_department.should == "Hillary Clinton"
     end
     
