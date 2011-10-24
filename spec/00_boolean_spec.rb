@@ -40,7 +40,7 @@ describe "Boolean", "refresher" do
       
       superman_index = subject.index(:superman)
       superman_index.should be_true
-
+      
       superman_index = !superman_index
       
       superman_index.should be_false
@@ -51,7 +51,7 @@ describe "Boolean", "refresher" do
       
       captain_marvel = subject.include?(:captain_marvel)
       captain_marvel.should be_false
-
+      
       captain_marvel = !captain_marvel
 
       captain_marvel.should be_true
